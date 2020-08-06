@@ -1,0 +1,12 @@
+.cover{
+    /* flex의 column 사용시 해당 자식태그의 height이 해당 태그의 height 에 딱 맞게 조정됨. 단 자식태그에 flex-grow : 1;를 꼭 넣어야 함.*/
+    min-height: 100vh;
+    /* height : 100vh로 주게되면 cover의 컨텐트가 100vh를 넘어가면 잘리기 때문에 min-height을 사용. */
+    display: flex; flex-flow: column;
+    /* about background_cover */
+    background-image: url(../img/SlideImage04.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: #464646;  */
+}
