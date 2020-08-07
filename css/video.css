@@ -56,7 +56,7 @@
 }
 
 .linkBringer ul li{
-  max-width: 300px;
+  max-width: 240px;
   overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
 }
 
