@@ -1,0 +1,86 @@
+.slideContainer{
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+}
+
+.arrowLayout{
+  position: absolute;
+  display: grid; grid-template-columns: 1fr 5fr 1fr;
+  max-width: 1200px; max-height: 700px;  
+  width: 65vw; height: 75vh;
+  z-index: 3;
+}
+
+.slider{
+  position: relative;
+  max-width: 1200px; max-height: 700px;  
+  width: 65vw; height: 75vh;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #7a7a7a;
+}
+
+.rightArrow{display: flex; align-items: center; justify-content: flex-end;}
+.leftArrow{display: flex; align-items: center; justify-content: flex-start;}
+
+.rightArrow img{  
+  padding-right: 26px; width: 16px; height: auto;
+  opacity: 0.9;
+} 
+
+.leftArrow img{  
+  padding-left: 26px; width: 16px; height: auto;
+  opacity: 0.9;
+} 
+
+.leftArrow:hover{background-color: #90a82e25;}
+.rightArrow:hover{background-color: #329aad25;}
+
+.slidePic{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.slidePic:first-child{background-image: url(../img/SlideImage01.jpg);}
+.slidePic:nth-child(2){background-image: url(../img/SlideImage02.jpg);}
+.slidePic:nth-child(3){background-image: url(../img/SlideImage03.jpg);}
+.slidePic:nth-child(4){background-image: url(../img/SlideImage04.jpg);}
+.slidePic:last-child{background-image: url(../img/SlideImage05.jpg);}
+
+.showing{opacity: 1; z-index: 1;}
+
+.explanation{
+  position: absolute;
+  top: 4vh;
+  left: -50px;
+  opacity: 0;
+  background-color: #ffffffb6;
+  color: #333;
+  padding: 24px;
+  padding-left: 22px;
+  border-right: 3px solid rgba(175, 21, 15, 0.788);
+  border-radius: 6px;
+}
+
+.explanation.spread{
+  opacity: 1;
+  transform: translateX(46px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.explanation h1{font-size: 20px; padding-bottom: 8px;}
+
+
+
+/* responsive size */
+@media all and (max-height : 940px){
+  .explanation{padding: 10px;}
+}

@@ -3,10 +3,12 @@
     min-height: 100vh;
     /* height : 100vh로 주게되면 cover의 컨텐트가 100vh를 넘어가면 잘리기 때문에 min-height을 사용. */
     display: flex; flex-flow: column;
-    /* about background_cover */
-    background-image: url(../img/SlideImage04.jpg);
+    /* background gradient */
+    background: linear-gradient(to top left, #1b1a20, #626269);
+    
+    /* background image */
+    /* background-image: url(../img/SlideImage06.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    /* background-color: #464646;  */
+    background-size: cover; */
 }

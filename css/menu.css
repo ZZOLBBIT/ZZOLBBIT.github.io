@@ -1,4 +1,32 @@
 
+/* Menu Open&Close Btn */
+.hamburger{
+    position: fixed;
+    cursor: pointer;
+    top: 6px; left: 6px;
+    z-index: 9999;
+    /* grid */
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: auto auto;
+    grid-template-areas: 
+    "ham cheese"
+    "ketchup bread";
+}
+.ham{grid-area: ham;}
+.cheese{grid-area: cheese;}
+.ketchup{grid-area: ketchup;}
+.bread{grid-area: bread;}
+
+.ham, .cheese, .ketchup, .bread{
+    width: 16px; height: 16px;
+    margin: 1.8px;
+    border-radius: 18%;
+    box-shadow: 0 9px 9px rgba(255, 87, 25, 0.3), 0 9px 9px rgba(255, 87, 25, 0.3);
+    background-color: rgb(255, 87, 25);
+}
+
+/* Menu container */
 .mainMenu{
     min-width: 100vw; min-height: 100vh;
     display: flex; flex-flow: column; justify-content: center; align-items: center;
@@ -8,15 +36,6 @@
 }
 
 .mainMenu.active{z-index: 9998;}
-
-/* Menu Open&Close Btn */
-.mainMenu img{
-    position: fixed;
-    top: 3px; left: 3px;
-    width: 36px; height: auto;
-    cursor: pointer;
-    z-index: 9999;
-}
 
 /* Background */
 .menuBackground{
@@ -40,8 +59,8 @@
 .backgroundBox.active:nth-child(4){transform: translateX(0); transition: all 1s ease-in-out;}
 
 .menuGrid{
-    max-width: 500px;
-    width: 70vw; height: fit-content;
+    max-width: 485px;
+    width: 70vw; height: auto;
     /* text */
     text-align: center;
     text-shadow: 0 -3px 0 #333,
@@ -57,8 +76,7 @@
     "Header"
     "menuList"
     "footer";
-    transform: translateY(-200vh);
-    opacity: 0; 
+    transform: translateY(-200vh); opacity: 0; 
     transition: transform 2s, opacity 0.5s;
 }
 .menuGrid.active{
@@ -78,7 +96,7 @@
 }
 .Header span{
     border-bottom: 1px solid burlywood;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* menuList */
@@ -90,7 +108,7 @@
     border-top: 2px solid rgba(222, 184, 135, 0.5);
     border-bottom: 2px solid rgba(222, 184, 135);
     margin-top: 20px;
-    padding: 22px 0;
+    padding: 16px 0;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto auto auto;
