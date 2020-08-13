@@ -10,66 +10,82 @@
   <!-- web css -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/video.css">
-  <title>Video</title>
+  <link rel="stylesheet" href="css/cover.css">
+  <title>slide</title>
 </head>
 
 <body>
-  <!-- menu open Btn -->
-  <div class="hamburger">
-    <div class="ham"></div>
-    <div class="cheese"></div>
-    <div class="ketchup"></div>
-    <div class="bread"></div>
-  </div>
-  <!-- menu -->
-  <div class="mainMenu">
-    <div class="menuBackground">
-      <div class="backgroundBox"></div>
-      <div class="backgroundBox"></div>
-      <div class="backgroundBox"></div>
-      <div class="backgroundBox"></div>
-    </div>
-    <div class="menuGrid">
-      <div class="Header"><span>ZZB Collective</span></div>
-      <div class="menuList">
-        <ul>
-          <li><a href="#">Tutorial</a></li>
-          <li><a href="./index.html">Video</a></li>
-          <li><a href="./2.html">Gallery</a></li>
-          <li><a href="#">Donation</a></li>
-        </ul>
-      </div>
-      <div class="footer">
-        <p>google</p>
-        <p>dcinside</p>
-        <p>youtube</p>
-      </div>
-    </div>
-  </div>
-  <div class="cover">
-    <!-- video -->
-    <div class="musicWrapper">
-      <div class="musicContainer">
-        <div class="linkBringer">
-          <input type='button' class="extendList" value="Click Me!" />
-          <ul>
-            <li> <span>Playing Now!</span> PREP - Line By Line feat. Cory Wong & Paul Jackson jr</li>
-            <li>• Katy Perry - Dark Horse (Official) ft. Juicy J</li>
-            <li>• Come and get Your Love(Guardians of the Galaxy Intro song) - Redbone</li>
-            <li>• Samm Henshaw - Doubt (Official Video) ft. Wretch 32</li>
-            <li>• Johnny Balik - Honey</li>
+  <!--Global menu -->
+  <div class="mainMenuWrapper">
+    <div class="mainMenuLogo"><img src="img/MainLogoText.png" alt=""></div>
+    <ul class="mainMenu">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <!-- Global Navigation menu -->
+      <li class="NavigationWrapper">
+        <div class="hamburgerWrapper">
+          <div class="ham"></div>
+          <div class="ham"></div>
+          <div class="ham"></div>
+        </div>
+        <div class="NavigationMenuWrapper">
+          <ul class="NavigationMenu">
+            <li><a href="#"><img src="img/MusicIcon.png" class="musicIcon" alt=""></a></li>
+            <li><a href="#"><img src="img/GalleryIcon.png" class="galleryIcon" alt=""></a></li>
+            <li><a href="#"><img src="./img/CalendarIcon.png" class="calendarIcon" alt=""></a></li>
+            <li><a href="#"><img src="./img/InfoIcon.png" class="InfoIcon" alt=""></a></li>
           </ul>
         </div>
-        <iframe class="mainYoutube" src="https://www.youtube.com/embed/1La4QzGeaaQ?autoplay=1&modestbranding=1"
-          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+      </li>
+    </ul>
+  </div>
+  <!-- Cover -->
+  <div class="coverWrapper">
+    <div class="coverContent">
+      <div class="coverBar">
+        <div class="coverBarDiscord"><img src="img/DiscordIcon.png" alt=""></div>
+        <div class="sectionLineWrapper">
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+          <div class="sectionLine"></div>
+        </div>  
+      </div>
+      <div class="coverMain">
+        <div class="coverMainPhrase">
+          <p>ZZB COLLECTIVE</p>
+          <p>THE MOST USELESS WEBSITE</p>
+        </div>
+      </div>
+      <div class="coverFooter">
+        <div class="coverFooterNews">
+          <div class="coverFooterNewsContent">
+          <div class="coverFooterNewsLine"></div>
+            <ul>
+              <li>Why is Everyone is Singing Baka Mitai??</li>
+              <li>Speech Expert Analyses My Voice *10 Years ago to Now*</li>
+              <li>Ghost of Tsushima #5 - -100 DEATHS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="coverFooterToday">
+          <div class="coverFooterTodayLine"></div>
+          <div class="coverFooterTodayDateTime">
+            <p>2020 - August - 13</p>
+            <p>08 : 13</p>
+          </div>
+        </div>
+        <div class="coverFooterExplore">
+          <p>EXPLORE</p>
+        </div>
       </div>
     </div>
   </div>
   <script src="js/global.js"></script>
-  <script src="js/video.js"></script>
 </body>
 
 </html>

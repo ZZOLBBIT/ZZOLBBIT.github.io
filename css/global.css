@@ -1,14 +1,82 @@
-.cover{
-    /* flex의 column 사용시 해당 자식태그의 height이 해당 태그의 height 에 딱 맞게 조정됨. 단 자식태그에 flex-grow : 1;를 꼭 넣어야 함.*/
-    min-height: 100vh;
-    /* height : 100vh로 주게되면 cover의 컨텐트가 100vh를 넘어가면 잘리기 때문에 min-height을 사용. */
-    display: flex; flex-flow: column;
-    /* background gradient */
-    background: linear-gradient(to top left, #1b1a20, #626269);
-    
-    /* background image */
-    /* background-image: url(../img/SlideImage06.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+
+/* Global menu */
+.mainMenuWrapper{
+  width: 100vw;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainMenuLogo{padding: 0 calc(7vw + 16px);}
+.mainMenuLogo img{width: 110px; height: auto;}
+
+.mainMenu{padding: 0 70px;}
+.mainMenu li{display: inline; padding: 0 14px;}
+.mainMenu li a{color: rgba(255, 255, 255, 0.7);}
+
+/* Navigation */
+.hamburgerWrapper{
+  position: fixed; top: 24px; right: 20px;
+  display: flex; flex-direction: column; align-items: flex-end;
+  z-index: 9998;
+  transform: translateX(0); transition: transform 0.3s;
+  color: white;
+  cursor: pointer;
+}
+.hamburgerWrapper.active{transform: translateX(-8px); transition: transform 0.3s;}
+
+.ham{
+  background-color: white; margin-top: 5px;
+  border-radius: 20%;
+}
+
+.ham:nth-child(1){width: 22px; height: 3px;}
+.ham:nth-child(2){width: 27px; height: 3px;}
+.ham:nth-child(3){width: 18px; height: 3px;}
+
+.NavigationMenuWrapper{
+  position: fixed; top: 0; right: 0;
+  width: 80px; min-height: 100vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.68);
+  z-index: 9997;
+  transform: translateX(80px); transition: transform 0.5s;
+}
+.NavigationMenuWrapper.active{transform: translateX(0px); transition: transform 0.5s;}
+
+.NavigationMenu{padding-top: 100px;} 
+.NavigationMenu li{
+  display: block;
+  margin: 30px 0;
+}
+
+.NavigationMenu li a img{transition: transform 0.35s;}
+.NavigationMenu li a img:hover{transform: scale(1.2); transition: transform 0.35s;}
+
+.musicIcon, .galleryIcon, .calendarIcon, .InfoIcon{width: 45px; height: auto;}
+
+/* responsive web */
+@media all and (max-width:650px){
+  .mainMenuWrapper{
+    margin-top: 16px;
+    padding-bottom: 20px;
+  }
+
+  .mainMenuLogo{
+    display: none; 
+  }
+
+  .hamburgerWrapper{
+    top: 10px; 
+  }
+  .mainMenu{
+    padding-right: 0;
+  }
+  .mainMenu li{
+    padding: 0 6px;
+  }
+
 }

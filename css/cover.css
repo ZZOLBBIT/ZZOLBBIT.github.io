@@ -1,0 +1,183 @@
+/* Font section */
+.coverMainPhrase p:nth-child(1){font-size: 52px; color: rgba(255, 255, 255, 0.9);}
+.coverMainPhrase p:nth-child(2){font-size: 32px; color: rgba(255, 255, 255, 0.7);}
+.coverFooter{
+	font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;
+	font-size: 18px; color: rgba(255, 255, 255, 0.9);
+}
+.coverFooterToday{font-size: 22px;}
+.coverFooterExplore{
+	font-family: 'Rowdies', 'Malgun Gothic','맑은 고딕',dotum,'돋움', cursive;
+	font-size: 28px; color: rgba(29, 29, 29, 0.9);
+}
+
+/* coverWrapper */
+.coverWrapper{
+	min-width: 100vw; min-height: 100vh;
+}
+
+/* CoverGrid */
+.coverContent{
+	min-width: 100vw; min-height: 100vh;
+	background-image: url(../img/SlideImage07.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: auto 1fr;
+	grid-template-areas: 
+	"coverBar coverMain"
+	"coverBar coverFooter";
+}
+.coverBar{grid-area: coverBar; width: 7vw; min-width: 60px;}
+.coverMain{grid-area: coverMain;}
+.coverFooter{grid-area: coverFooter; height: 25vh;}
+
+
+/* coverBar */
+.coverBar{
+	position: relative; 
+	display: flex; flex-direction: column; 
+	align-items: center; justify-content: center;
+}
+.coverBar:before {
+	content: "";
+	width: 100%; height: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.coverBarDiscord{
+	position: absolute; top: 20px;
+}
+.coverBarDiscord img{
+	width: 36px; height: auto;
+}
+
+.sectionLineWrapper{
+	position: absolute;
+}
+.sectionLine{
+	width: 16px; height: 4px;
+	margin: 18px 0;
+	border-radius: 20%;
+	background-color: rgba(255, 255, 255, 0.7); 
+	cursor: pointer;
+}
+.sectionLine:nth-child(1){
+	width: 24px;
+	background-color: rgba(255, 255, 255, 0.9); 
+}
+
+
+/* coverMain */
+.coverMain{
+	display: flex; flex-direction: row; 
+	align-items: flex-end;
+}
+
+.coverMainPhrase{
+	margin-left: 5vw; margin-bottom: 15vh; 
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* coverFooter */
+.coverFooter{
+	display: grid;
+	grid-template-areas: auto;
+	grid-template-columns: auto auto 1fr;
+	grid-template-areas: 
+	"coverFooterNews coverFooterToday coverFooterExplore";
+	gap: 1px;
+}
+.coverFooterNews{grid-area: coverFooterNews; width: 24vw;}
+.coverFooterToday{grid-area: coverFooterToday; width: 40vw;}
+.coverFooterExplore{grid-area: coverFooterExplore;}
+
+.coverFooterNews, .coverFooterToday, .coverFooterExplore{
+	background-color: rgba(0, 0, 0, 0.8); border-radius: 3px;
+}
+
+
+/* coverFooter - coverFooterNews */
+
+.coverFooterNews{
+	display: flex; flex-direction: row; 
+	align-items: center; justify-content: center;
+	overflow: hidden;
+}
+
+.coverFooterNewsContent{
+	display: flex; flex-direction: row; 
+	align-items: center; justify-content: center;
+	padding: 1vh 1vw;
+}
+
+.coverFooterNewsLine{
+	width: 2px; height: 72px;
+	margin-right: 10px;
+	background-color: rgb(206, 152, 82);
+}
+
+.coverFooterNews ul{
+	width: calc(24vw - 12px - 60px);
+}
+
+.coverFooterNews ul li{
+	overflow: hidden; 
+	white-space: nowrap; text-overflow: ellipsis;
+}
+
+
+/* coverFooterToday */
+.coverFooterToday{
+	display: flex; flex-direction: row; 
+	align-items: center;  justify-content: center;
+	text-align: center;
+}
+
+.coverFooterTodayLine{
+	width: 2px; height: 62px;
+	margin-right: 10px;
+	background-color: rgb(206, 152, 82);
+}
+
+
+/* coverFooterExplore*/
+.coverFooterExplore{
+	display: flex; flex-direction: row;
+	justify-content: center; align-items: center;
+	background-color: rgba(255, 255, 255, 0.8);
+	cursor: pointer;
+}
+
+
+/* responsive web */
+@media all and (max-width: 650px){
+	.coverMainPhrase p:nth-child(1){
+		font-size: 26px; color: rgba(255, 255, 255, 0.9);
+	}
+	.coverMainPhrase p:nth-child(2){
+		font-size: 18px; color: rgba(255, 255, 255, 0.7);
+	}
+
+	/* coverFooter */
+	.coverFooter{
+	grid-template-areas: auto;
+	grid-template-columns: auto 1fr;
+	grid-template-areas: 
+	"coverFooterNews coverFooterExplore";
+	}
+	.coverFooterNews{grid-area: coverFooterNews; width: 43vw;}
+	.coverFooterExplore{grid-area: coverFooterExplore;}
+	.coverFooterNews ul{
+		width: calc(43vw - 12px - 60px);
+	}
+	.coverFooterToday{
+		display: none;
+	}
+	.coverFooterExplore{
+		font-size: 16px;
+	}
+}
