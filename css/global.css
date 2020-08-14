@@ -2,19 +2,14 @@
 /* Global menu */
 .mainMenuWrapper{
   width: 100vw;
-  margin-top: 30px;
-  padding-bottom: 20px;
   position: fixed;
-  display: flex;
-  flex-direction: row;
+  display: flex; flex-direction: row;
   justify-content: space-between;
+  margin-top: 2.2vh;
 }
 
-.mainMenuLogo{padding: 0 calc(7vw + 16px);}
-.mainMenuLogo img{width: 110px; height: auto;}
-
-.mainMenu{padding: 0 70px;}
-.mainMenu li{display: inline; padding: 0 14px;}
+.mainMenu{margin-left: 7vw;}
+.mainMenu li{display: inline; padding: 0 1vw;}
 .mainMenu li a{color: rgba(255, 255, 255, 0.7);}
 
 /* Navigation */
@@ -26,13 +21,14 @@
   color: white;
   cursor: pointer;
 }
-.hamburgerWrapper.active{transform: translateX(-8px); transition: transform 0.3s;}
+.hamburgerWrapper.active{
+  transform: translateX(-8px); transition: transform 0.3s;
+}
 
 .ham{
   background-color: white; margin-top: 5px;
   border-radius: 20%;
 }
-
 .ham:nth-child(1){width: 22px; height: 3px;}
 .ham:nth-child(2){width: 27px; height: 3px;}
 .ham:nth-child(3){width: 18px; height: 3px;}
@@ -45,38 +41,32 @@
   z-index: 9997;
   transform: translateX(80px); transition: transform 0.5s;
 }
-.NavigationMenuWrapper.active{transform: translateX(0px); transition: transform 0.5s;}
-
-.NavigationMenu{padding-top: 100px;} 
-.NavigationMenu li{
-  display: block;
-  margin: 30px 0;
+.NavigationMenuWrapper.active{
+  transform: translateX(0px); transition: transform 0.5s;
 }
 
-.NavigationMenu li a img{transition: transform 0.35s;}
-.NavigationMenu li a img:hover{transform: scale(1.2); transition: transform 0.35s;}
+.NavigationMenu{
+  padding-top: 16vh;
+} 
+.NavigationMenu li{
+  display: block;
+  margin: 5vh 0;
+}
 
-.musicIcon, .galleryIcon, .calendarIcon, .InfoIcon{width: 45px; height: auto;}
+.NavigationMenu li a img{
+  transition: transform 0.35s;
+}
+.NavigationMenu li a img:hover{
+  transform: scale(1.2); transition: transform 0.35s;
+}
+
+.musicIcon, .galleryIcon, .calendarIcon, .InfoIcon{
+  width: 45px; height: auto;
+}
 
 /* responsive web */
-@media all and (max-width:650px){
-  .mainMenuWrapper{
-    margin-top: 16px;
-    padding-bottom: 20px;
-  }
-
-  .mainMenuLogo{
-    display: none; 
-  }
-
-  .hamburgerWrapper{
-    top: 10px; 
-  }
+@media all and (max-width:768px){
   .mainMenu{
-    padding-right: 0;
+    display: none;
   }
-  .mainMenu li{
-    padding: 0 6px;
-  }
-
 }

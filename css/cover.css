@@ -1,15 +1,23 @@
 /* Font section */
-.coverMainPhrase p:nth-child(1){font-size: 52px; color: rgba(255, 255, 255, 0.9);}
-.coverMainPhrase p:nth-child(2){font-size: 32px; color: rgba(255, 255, 255, 0.7);}
+.coverMainPhrase p:nth-child(1){
+	font-size: 42px; color: rgba(255, 255, 255, 0.9);
+}
+.coverMainPhrase p:nth-child(2){
+	font-size: 24px; color: rgba(255, 255, 255, 0.7);
+}
+
 .coverFooter{
 	font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;
 	font-size: 18px; color: rgba(255, 255, 255, 0.9);
 }
-.coverFooterToday{font-size: 22px;}
+.coverFooterToday{
+	font-size: 22px;
+}
 .coverFooterExplore{
 	font-family: 'Rowdies', 'Malgun Gothic','맑은 고딕',dotum,'돋움', cursive;
 	font-size: 28px; color: rgba(29, 29, 29, 0.9);
 }
+
 
 /* coverWrapper */
 .coverWrapper{
@@ -24,15 +32,18 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: grid;
-	grid-template-rows: 1fr auto;
+	grid-template-rows: auto auto;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
 	"coverBar coverMain"
 	"coverBar coverFooter";
+	overflow: hidden;
 }
-.coverBar{grid-area: coverBar; width: 7vw; min-width: 60px;}
-.coverMain{grid-area: coverMain;}
-.coverFooter{grid-area: coverFooter; height: 25vh;}
+.coverBar{grid-area: coverBar; width: 7vw; height: 100vh;
+	min-width: 56px; 
+}
+.coverMain{grid-area: coverMain; width: auto; height: 75vh;}
+.coverFooter{grid-area: coverFooter; width: auto; height: 25vh;}
 
 
 /* coverBar */
@@ -79,6 +90,9 @@
 
 .coverMainPhrase{
 	margin-left: 5vw; margin-bottom: 15vh; 
+	white-space: nowrap; 
+}
+.coverMainPhrase p:nth-child(2){
 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -86,22 +100,21 @@
 .coverFooter{
 	display: grid;
 	grid-template-areas: auto;
-	grid-template-columns: auto auto 1fr;
+	grid-template-columns: auto auto 1fr; /* gap을 사용하는 행이나 열은 1fr을 추가해야 길이 설정이 용이함 */
 	grid-template-areas: 
 	"coverFooterNews coverFooterToday coverFooterExplore";
-	gap: 1px;
+	gap: 3px;
 }
-.coverFooterNews{grid-area: coverFooterNews; width: 24vw;}
-.coverFooterToday{grid-area: coverFooterToday; width: 40vw;}
-.coverFooterExplore{grid-area: coverFooterExplore;}
+.coverFooterNews{grid-area: coverFooterNews; width: 24vw; height: 25vh;}
+.coverFooterToday{grid-area: coverFooterToday; width: 40vw; height: 25vh;}
+.coverFooterExplore{grid-area: coverFooterExplore; height: 25vh;}
 
 .coverFooterNews, .coverFooterToday, .coverFooterExplore{
-	background-color: rgba(0, 0, 0, 0.8); border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.6); border-radius: 3px;
 }
 
 
 /* coverFooter - coverFooterNews */
-
 .coverFooterNews{
 	display: flex; flex-direction: row; 
 	align-items: center; justify-content: center;
@@ -134,7 +147,6 @@
 .coverFooterToday{
 	display: flex; flex-direction: row; 
 	align-items: center;  justify-content: center;
-	text-align: center;
 }
 
 .coverFooterTodayLine{
@@ -148,36 +160,45 @@
 .coverFooterExplore{
 	display: flex; flex-direction: row;
 	justify-content: center; align-items: center;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.7);
 	cursor: pointer;
 }
 
 
 /* responsive web */
-@media all and (max-width: 650px){
+@media all and (max-width: 768px){
 	.coverMainPhrase p:nth-child(1){
-		font-size: 26px; color: rgba(255, 255, 255, 0.9);
+		font-size: 24px; color: rgba(255, 255, 255, 0.9);
 	}
 	.coverMainPhrase p:nth-child(2){
-		font-size: 18px; color: rgba(255, 255, 255, 0.7);
+		font-size: 16px; color: rgba(255, 255, 255, 0.7);
 	}
 
 	/* coverFooter */
 	.coverFooter{
-	grid-template-areas: auto;
+	grid-template-rows: auto;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
 	"coverFooterNews coverFooterExplore";
+	/* gap: 3px; */
 	}
-	.coverFooterNews{grid-area: coverFooterNews; width: 43vw;}
+	.coverFooterNews{grid-area: coverFooterNews; width: 56vw;}
 	.coverFooterExplore{grid-area: coverFooterExplore;}
+
 	.coverFooterNews ul{
-		width: calc(43vw - 12px - 60px);
+		width: calc(56vw - 12px - 60px);
 	}
+
 	.coverFooterToday{
 		display: none;
 	}
+
 	.coverFooterExplore{
-		font-size: 16px;
+		font-size: 18px;
 	}
+}
+
+
+@media all and (max-height: 400px){
+
 }
